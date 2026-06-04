@@ -1,0 +1,2 @@
+﻿# Mark model pickles as binary
+models/*.pkl binary
