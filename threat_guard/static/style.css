@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY – RANDOM-LOOKING GREEN SQUARE GRID ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    min-height: 100vh;
+    background-color: #010b06;
+
+    /* Multiple square layers to fake randomness */
+    background-image:
+        /* Bright green small squares */
+        linear-gradient(rgba(0, 255, 120, 0.20) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 120, 0.20) 1px, transparent 1px),
+
+        /* Medium green squares */
+        linear-gradient(rgba(0, 200, 100, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 200, 100, 0.15) 1px, transparent 1px),
+
+        /* Dark green squares */
+        linear-gradient(rgba(0, 120, 70, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 120, 70, 0.12) 1px, transparent 1px),
+
+        /* Black interference squares */
+        linear-gradient(rgba(0, 0, 0, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
+
+    /* Different grid sizes = random illusion */
+    background-size:
+        22px 22px,
+        22px 22px,
+
+        45px 45px,
+        45px 45px,
+
+        90px 90px,
+        90px 90px,
+
+        160px 160px,
+        160px 160px;
+
+    /* Slight offsets so grids don’t align */
+    background-position:
+        0 0,
+        0 0,
+
+        10px 20px,
+        10px 20px,
+
+        30px 50px,
+        30px 50px,
+
+        70px 110px,
+        70px 110px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+
+    /* ✅ Keeps bottom link at bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #00ff88;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #a8ffcf;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD LAYOUT ===== */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(0, 20, 10, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.25);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 45px rgba(0, 255, 120, 0.7);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #00ff88;
+}
+
+.card p {
+    color: #b6ffd6;
+}
+
+/* ===== GREEN ACTION BUTTONS ===== */
+.btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    color: #001a0d;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Strong glow hover */
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 10px #00ff88,
+        0 0 25px #00ff88,
+        0 0 50px rgba(0, 255, 120, 0.9);
+}
+
+/* ===== FORMS ===== */
+.form-box {
+    margin-top: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00ff88;
+    background: #010b06;
+    color: #d4ffd9;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #7dffb5;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* ===== RESULT ===== */
+.result {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00ff88;
+}
+
+/* ===== BACK LINK ===== */
+.back {
+    display: block;
+    margin-top: 30px;
+    color: #7dffb5;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-shadow: 0 0 12px #00ff88;
+}
+
+/*  ABOUT LINK AT BOTTOM */
+
+
+.bottom-link {
+    margin-top: auto;       /* Pushes it to bottom */
+    padding-bottom: 25px;   /* Space from bottom */
+    padding-top: 35px;      /* Space above link */
+}
+
+.about-link {
+    display: inline-block;
+    color: #00ff88;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    font-weight: 200;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: 0.3s ease;
+}
+
+.about-link:hover {
+    color: #7dffb5;
+    text-shadow: 0 0 12px #00ff88;
+    transform: translateY(-2px);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+/* ABOUT PAGE CONTENT */
+
+
+.about-box {
+    text-align: left;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 120, 0.35);
+    background: rgba(0, 20, 10, 0.75);
+    box-shadow: 0 0 18px rgba(0, 255, 120, 0.18);
+}
+
+.about-box h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #00ff88;
+}
+
+.about-box p {
+    color: #b6ffd6;
+    line-height: 2.0;
+}
+
+.about-box ul {
+    margin-left: px;
+    margin-top: 10px;
+    color: #b6ffd6;
+    list-style: none;
+}
+
+.about-box ul li {
+    margin-bottom: 8px;
+    margin-left: 0px;
+    
+}

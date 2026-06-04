@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Threat Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📧 Malicious Email Detection</h1>
+    <p>Paste the email content below</p>
+
+    <form method="post" class="form-box">
+        <textarea name="email" placeholder="Paste email content here..." required></textarea>
+        <button type="submit" class="btn">Analyze Email</button>
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+
+    <a href="/" class="back">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
